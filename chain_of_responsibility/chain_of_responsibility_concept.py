@@ -21,7 +21,7 @@ class Successor1(IHandler):
         if test == 1:
             payload = payload + 1
             payload = Successor1().handle(payload)
-        if test == 2:
+        elif test == 2:
             payload = payload - 1
             payload = Successor2().handle(payload)
         return payload
@@ -36,7 +36,7 @@ class Successor2(IHandler):
         if test == 1:
             payload = payload * 2
             payload = Successor1().handle(payload)
-        if test == 2:
+        elif test == 2:
             payload = payload / 2
             payload = Successor2().handle(payload)
         return payload

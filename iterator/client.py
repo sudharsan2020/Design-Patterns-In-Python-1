@@ -16,5 +16,5 @@ class NumberWheel():  # pylint: disable=too-few-public-methods
 # The Client
 NUMBERWHEEL = NumberWheel()
 
-for i in range(22):
+for _ in range(22):
     print(NUMBERWHEEL.next(), end=", ")

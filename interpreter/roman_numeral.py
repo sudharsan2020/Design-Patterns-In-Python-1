@@ -38,13 +38,13 @@ class RomanNumeral1(RomanNumeral):
         if not context[0]:
             return Number(context[1]).interpret()
 
-        if context[0][0: 2] == cls.nine:
+        if context[0][:2] == cls.nine:
             context[1] += (9 * cls.multiplier)
             context[0] = context[0][2:]
         elif context[0][0] == cls.five:
             context[1] += (5 * cls.multiplier)
             context[0] = context[0][1:]
-        elif context[0][0: 2] == cls.four:
+        elif context[0][:2] == cls.four:
             context[1] += + (4 * cls.multiplier)
             context[0] = context[0][2:]
 

@@ -16,7 +16,7 @@ class Users():
     def register_user(cls, new_user: dict[str, str]) -> str:  # Python 3.9
         # def register_user(cls, new_user) -> str:  # Python 3.8 or earlier
         "register a user"
-        if not new_user["user_name"] in cls._users:
+        if new_user["user_name"] not in cls._users:
             # generate really complicated unique user_id.
             # Using the existing user_name as the id for simplicity
             user_id = new_user["user_name"]

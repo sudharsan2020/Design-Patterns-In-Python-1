@@ -52,9 +52,7 @@ class Creator:
             return ConcreteProductA()
         if some_property == 'b':
             return ConcreteProductB()
-        if some_property == 'c':
-            return ConcreteProductC()
-        return None
+        return ConcreteProductC() if some_property == 'c' else None
 
 
 # The Client

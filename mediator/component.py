@@ -10,8 +10,8 @@ class Component(IComponent):
         self._name = name
 
     def notify(self, message):
-        print(self._name + ": >>> Out >>> : " + message)
+        print(f"{self._name}: >>> Out >>> : {message}")
         self._mediator.notify(message, self)
 
     def receive(self, message):
-        print(self._name + ": <<< In <<< : " + message)
+        print(f"{self._name}: <<< In <<< : {message}")

@@ -65,9 +65,7 @@ TOKENS = SENTENCE.split(" ")
 print(TOKENS)
 
 # Manually Creating an Abstract Syntax Tree from the tokens
-AST: list[AbstractExpression] = []  # Python 3.9
-# AST = []  # Python 3.8 or earlier
-AST.append(Add(Number(TOKENS[0]), Number(TOKENS[2])))  # 5 + 4
+AST: list[AbstractExpression] = [Add(Number(TOKENS[0]), Number(TOKENS[2]))]
 AST.append(Subtract(AST[0], Number(TOKENS[4])))        # ^ - 3
 AST.append(Add(AST[1], Number(TOKENS[6])))             # ^ + 7
 AST.append(Subtract(AST[2], Number(TOKENS[8])))        # ^ - 2

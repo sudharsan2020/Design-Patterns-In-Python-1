@@ -15,21 +15,19 @@ while COUNTER < TOTALCUBES:
     HEIGHT = random.randint(1, 10)
     DEPTH = random.randint(1, 10)
     CUBE = CubeA()
-    SUCCESS = CUBE.manufacture(WIDTH, HEIGHT, DEPTH)
-    if SUCCESS:
+    if SUCCESS := CUBE.manufacture(WIDTH, HEIGHT, DEPTH):
         print(
             f"Company A building Cube id:{id(CUBE)}, "
             f"{CUBE.width}x{CUBE.height}x{CUBE.depth}")
-        COUNTER = COUNTER + 1
-    else:  # try other manufacturer
+        COUNTER += 1
+    else:
         print("Company A is busy, trying company B")
         CUBE = CubeBAdapter()
-        SUCCESS = CUBE.manufacture(WIDTH, HEIGHT, DEPTH)
-        if SUCCESS:
+        if SUCCESS := CUBE.manufacture(WIDTH, HEIGHT, DEPTH):
             print(
                 f"Company B building Cube id:{id(CUBE)}, "
                 f"{CUBE.width}x{CUBE.height}x{CUBE.depth}")
-            COUNTER = COUNTER + 1
+            COUNTER += 1
         else:
             print("Company B is busy, trying company A")
     # wait some time before manufacturing a new cube

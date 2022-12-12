@@ -25,7 +25,7 @@ class FlyweightFactory():
     @classmethod
     def get_flyweight(cls, code: int) -> Flyweight:
         "A static method to get a flyweight based on a code"
-        if not code in cls._flyweights:
+        if code not in cls._flyweights:
             cls._flyweights[code] = Flyweight(code)
         return cls._flyweights[code]
 

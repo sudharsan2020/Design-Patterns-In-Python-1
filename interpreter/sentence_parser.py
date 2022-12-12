@@ -59,12 +59,10 @@ class Parser:
         """
         left = tokens.pop(0)
         left_expression = None
-        if not tree:  # only applicable if first round
-            if not left.isdigit():  # if 1st token a roman numeral
-                tree.append(RomanNumeral(left))
-                left_expression = tree[-1]
-            else:
-                left_expression = Number(left)
+        if tree:
+            return tree[-1]
+        elif not left.isdigit():  # if 1st token a roman numeral
+            tree.append(RomanNumeral(left))
+            return tree[-1]
         else:
-            left_expression = tree[-1]
-        return left_expression
+            return Number(left)

@@ -14,7 +14,7 @@ class Wallets():
     @classmethod
     def create_wallet(cls, user_id: str) -> bool:
         "A method to initialize a users wallet"
-        if not user_id in cls._wallets:
+        if user_id not in cls._wallets:
             cls._wallets[user_id] = Decimal('0')
             Reports.log_event(
                 f"wallet for `{user_id}` created and set to 0")

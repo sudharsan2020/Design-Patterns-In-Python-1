@@ -14,7 +14,7 @@ class Folder(IComponent):
             f"{indent}<DIR>  {self.name}\t\tid:{id(self)}\t"
             f"Components: {len(self.components)}")
         for component in self.components:
-            component.dir(indent + "..")
+            component.dir(f"{indent}..")
 
     def attach(self, component):
         """

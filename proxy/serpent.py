@@ -16,4 +16,4 @@ class Serpent(IProteus):  # pylint: disable=too-few-public-methods
 
     @classmethod
     def tell_me_your_form(cls):
-        print("I am the form of a " + cls.name)
+        print(f"I am the form of a {cls.name}")

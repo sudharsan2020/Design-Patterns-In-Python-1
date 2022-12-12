@@ -6,9 +6,7 @@ class Row():  # pylint: disable=too-few-public-methods
     "A Row in the Table"
 
     def __init__(self, column_count: int) -> None:
-        self.columns = []
-        for _ in range(column_count):
-            self.columns.append(Column())
+        self.columns = [Column() for _ in range(column_count)]
 
     def get_data(self):
         "Format the row before returning it to the table"

@@ -14,7 +14,7 @@ class HTMLDocument(AbstractDocument):
         lines = text.splitlines()
         markup = ""
         for line in lines:
-            markup = markup + "    <p>" + f"{line}</p>\n"
+            markup = f"{markup}    <p>" + f"{line}</p>\n"
         document["text"] = markup[:-1]
 
     @staticmethod

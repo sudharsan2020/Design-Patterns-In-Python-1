@@ -14,6 +14,4 @@ class ChairFactory:  # pylint: disable=too-few-public-methods
             return BigChair()
         if chair == 'MediumChair':
             return MediumChair()
-        if chair == 'SmallChair':
-            return SmallChair()
-        return None
+        return SmallChair() if chair == 'SmallChair' else None

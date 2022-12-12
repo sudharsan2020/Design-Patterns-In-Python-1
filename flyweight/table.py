@@ -7,9 +7,7 @@ class Table():  # pylint: disable=too-few-public-methods
     "A Formatted Table"
 
     def __init__(self, row_count: int, column_count: int) -> None:
-        self.rows = []
-        for _ in range(row_count):
-            self.rows.append(Row(column_count))
+        self.rows = [Row(column_count) for _ in range(row_count)]
 
     def draw(self):
         "Draws the table formatted in the console"
